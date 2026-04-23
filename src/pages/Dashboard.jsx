@@ -16,7 +16,7 @@ export default function Dashboard() {
             let start = 0;
             const duration = 2000;
             const increment = target / (duration / 16);
-            
+
             const timer = setInterval(() => {
                 start += increment;
                 if (start >= target) {
@@ -36,8 +36,11 @@ export default function Dashboard() {
 
     return (
         <div className="animate-fadeIn">
-            <PageHeader />
-            
+            <PageHeader
+                title="Dashboard"
+                breadcrumb={[{ name: "Dashboard", path: "/" }]}
+            />
+
             <div className="p-5 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {/* Orders Card */}
                 <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg p-6 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 animate-slideInUp">
