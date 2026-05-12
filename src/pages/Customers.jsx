@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { 
+  RiUserAddLine, RiMailLine, RiPhoneLine, RiVipCrownLine, 
+  RiSearchLine, RiCloseLine, RiFilter3Line 
+} from "react-icons/ri";
 import PageHeader from "../components/PageHeader";
 import customersData from "../data/Customer.json";
 
 export default function Customers() {
-  // ambil data dari json
   const [customers] = useState(customersData);
-
   const [showForm, setShowForm] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,179 +19,195 @@ export default function Customers() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     alert(`Customer ${formData.name} added successfully!`);
-
     setShowForm(false);
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      loyalty: "Bronze",
-    });
+    setFormData({ name: "", email: "", phone: "", loyalty: "Bronze" });
   };
 
-  const getLoyaltyColor = (loyalty) => {
+  const getLoyaltyBadge = (loyalty) => {
     switch (loyalty) {
       case "Gold":
-        return "bg-yellow-100 text-yellow-800";
-
+        return "bg-amber-100 text-amber-600 border-amber-200";
       case "Silver":
-        return "bg-gray-100 text-gray-800";
-
+        return "bg-slate-100 text-slate-500 border-slate-200";
       case "Bronze":
-        return "bg-orange-100 text-orange-800";
-
+        return "bg-rose-100 text-rose-500 border-rose-200";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-100 text-gray-500 border-gray-200";
     }
   };
 
   return (
-    <div className="animate-fadeIn">
-      <PageHeader
-        title="Customers"
-        breadcrumb={[{ name: "Dashboard", path: "/" }, { name: "Customers" }]}
-      >
-        <button
-          onClick={() => setShowForm(true)}
-          className="bg-hijau text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+    <div className="min-h-screen bg-[#FFF5F7] p-6 lg:p-10 animate-fadeIn">
+      {/* Header dengan Style Pink */}
+      <div className="mb-10">
+        <PageHeader
+          title="Customer Base"
+          breadcrumb={[{ name: "Dashboard", path: "/" }, { name: "Customers" }]}
         >
-          Add Customer
-        </button>
-      </PageHeader>
-
-      {/* Customer Table */}
-      <div className="p-5 bg-white rounded-xl shadow-lg overflow-x-auto">
-        <table className="w-full table-auto">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-4 rounded-tl-lg">Customer ID</th>
-              <th className="p-4">Name</th>
-              <th className="p-4">Email</th>
-              <th className="p-4">Phone</th>
-              <th className="p-4 rounded-tr-lg">Loyalty</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {customers.map((customer, index) => (
-              <tr
-                key={customer.id}
-                className={`
-border-b  hover:bg-gray-50 transition ${ index % 2 === 0 ? "bg-white": "bg-gray-50"}`} >
-                <td className="p-4 font-mono text-sm">{customer.id}</td>
-                <td className="p-4 font-medium">
-                  <Link to={`/customers/${customer.id}`} className="text-emerald-400 hover:text-emerald-500">
-                    {customer.name}
-                  </Link>
-                </td>
-                <td className="p-4">{customer.email}</td>
-                <td className="p-4">{customer.phone}</td>
-                <td className="p-4">
-                  <span
-                    className={`
-                                            px-3 py-1 rounded-full
-                                            text-sm font-medium
-                                            ${getLoyaltyColor(customer.loyalty)}
-                                        `}
-                  >
-                    {customer.loyalty}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          <button
+            onClick={() => setShowForm(true)}
+            className="flex items-center gap-2 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-2xl font-bold hover:shadow-lg hover:shadow-rose-200 transition-all active:scale-95 shadow-md text-sm"
+          >
+            <RiUserAddLine size={18} />
+            Add New Customer
+          </button>
+        </PageHeader>
       </div>
 
-      {/* Modal */}
+      {/* Toolbar: Search & Filter */}
+      <div className="mb-6 flex flex-col md:flex-row gap-4">
+        <div className="relative flex-1">
+          <RiSearchLine className="absolute left-4 top-1/2 -translate-y-1/2 text-rose-300" />
+          <input 
+            type="text" 
+            placeholder="Search by name or email..." 
+            className="w-full pl-11 pr-6 py-3 bg-white/80 border border-rose-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-rose-500/10 transition-all placeholder:text-rose-200 text-sm"
+          />
+        </div>
+        <button className="flex items-center justify-center gap-2 bg-white border border-rose-100 text-rose-400 px-5 py-3 rounded-2xl hover:bg-rose-50 transition-all text-sm font-bold">
+          <RiFilter3Line /> Filter
+        </button>
+      </div>
+
+      {/* Customer Table - Modern Style */}
+      <div className="bg-white rounded-[2.5rem] shadow-xl shadow-rose-500/5 overflow-hidden border border-rose-50">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-rose-50/50 text-rose-400 uppercase text-[11px] font-black tracking-[0.15em]">
+                <th className="p-6 text-left">Customer</th>
+                <th className="p-6 text-left">Contact Info</th>
+                <th className="p-6 text-left">Status</th>
+                <th className="p-6 text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-rose-50">
+              {customers.map((customer) => (
+                <tr key={customer.id} className="group hover:bg-rose-50/30 transition-all">
+                  <td className="p-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-100 to-pink-50 flex items-center justify-center text-rose-500 font-bold group-hover:scale-110 transition-transform">
+                        {customer.name.charAt(0)}
+                      </div>
+                      <div>
+                        <Link to={`/customers/${customer.id}`} className="text-sm font-black text-slate-800 hover:text-rose-500 transition-colors">
+                          {customer.name}
+                        </Link>
+                        <p className="text-[10px] font-bold text-rose-300 uppercase mt-0.5 tracking-tighter">ID: {customer.id}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="p-6">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <RiMailLine className="text-rose-300" /> {customer.email}
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <RiPhoneLine className="text-rose-300" /> {customer.phone}
+                      </div>
+                    </div>
+                  </td>
+                  <td className="p-6">
+                    <span className={`flex items-center gap-1.5 w-fit px-4 py-1.5 rounded-full text-[10px] font-black uppercase border ${getLoyaltyBadge(customer.loyalty)}`}>
+                      <RiVipCrownLine size={12} />
+                      {customer.loyalty}
+                    </span>
+                  </td>
+                  <td className="p-6 text-center">
+                    <button className="text-rose-300 hover:text-rose-500 font-black text-[10px] uppercase tracking-widest p-2 hover:bg-white rounded-xl transition-all">
+                      Details
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Modal - Glassmorphism Pink */}
       {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-2xl">
-            <h2 className="text-2xl font-bold mb-4">Add New Customer</h2>
+        <div className="fixed inset-0 bg-rose-900/20 backdrop-blur-md flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-[3rem] p-10 w-full max-w-md shadow-2xl relative animate-slideInUp">
+            <button 
+              onClick={() => setShowForm(false)}
+              className="absolute top-6 right-6 p-2 text-rose-200 hover:text-rose-500 transition-colors"
+            >
+              <RiCloseLine size={24} />
+            </button>
 
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Nama</label>
+            <div className="mb-8">
+              <h2 className="text-2xl font-black text-slate-800 tracking-tight">New Customer</h2>
+              <p className="text-sm font-medium text-rose-300">Add user to loyalty program</p>
+            </div>
 
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label className="block text-[11px] font-black text-rose-400 uppercase tracking-widest mb-2 ml-1">Full Name</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-hijau"
+                  className="w-full px-5 py-4 bg-rose-50 border border-transparent rounded-[1.2rem] focus:bg-white focus:border-rose-200 focus:outline-none focus:ring-4 focus:ring-rose-500/5 transition-all text-sm font-medium"
+                  placeholder="e.g. Jane Doe"
                   required
                 />
               </div>
 
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Email</label>
-
+              <div>
+                <label className="block text-[11px] font-black text-rose-400 uppercase tracking-widest mb-2 ml-1">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-hijau"
+                  className="w-full px-5 py-4 bg-rose-50 border border-transparent rounded-[1.2rem] focus:bg-white focus:border-rose-200 focus:outline-none focus:ring-4 focus:ring-rose-500/5 transition-all text-sm font-medium"
+                  placeholder="jane@example.com"
                   required
                 />
               </div>
 
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Phone</label>
-
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-hijau"
-                  required
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[11px] font-black text-rose-400 uppercase tracking-widest mb-2 ml-1">Phone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-5 py-4 bg-rose-50 border border-transparent rounded-[1.2rem] focus:bg-white focus:border-rose-200 focus:outline-none focus:ring-4 focus:ring-rose-500/5 transition-all text-sm font-medium"
+                    placeholder="0812..."
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-black text-rose-400 uppercase tracking-widest mb-2 ml-1">Loyalty</label>
+                  <select
+                    name="loyalty"
+                    value={formData.loyalty}
+                    onChange={handleInputChange}
+                    className="w-full px-5 py-4 bg-rose-50 border border-transparent rounded-[1.2rem] focus:bg-white focus:border-rose-200 focus:outline-none focus:ring-4 focus:ring-rose-500/5 transition-all text-sm font-bold text-rose-500"
+                  >
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                  </select>
+                </div>
               </div>
 
-              <div className="mb-6">
-                <label className="block text-gray-700 mb-2">Loyalty</label>
-
-                <select
-                  name="loyalty"
-                  value={formData.loyalty}
-                  onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-hijau"
-                >
-                  <option value="Bronze">Bronze</option>
-
-                  <option value="Silver">Silver</option>
-
-                  <option value="Gold">Gold</option>
-                </select>
-              </div>
-
-              <div className="flex justify-end gap-3">
-                <button
-                  type="button"
-                  onClick={() => setShowForm(false)}
-                  className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-                >
-                  Cancel
-                </button>
-
+              <div className="pt-4">
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-hijau text-white rounded-lg hover:bg-green-700 transition"
+                  className="w-full py-5 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] shadow-lg shadow-rose-200 hover:brightness-110 active:scale-[0.98] transition-all"
                 >
-                  Save
+                  Save Customer
                 </button>
               </div>
             </form>
