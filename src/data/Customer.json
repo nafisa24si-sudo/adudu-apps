@@ -1,0 +1,212 @@
+[
+  {
+    "id": "CUST-001",
+    "name": "Ahmad Fauzi",
+    "email": "ahmad.fauzi@gmail.com",
+    "phone": "+62-812-345-6789",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-002",
+    "name": "Budi Santoso",
+    "email": "budi.santoso@yahoo.com",
+    "phone": "+62-813-456-7890",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-003",
+    "name": "Citra Dewi",
+    "email": "citra.dewi@outlook.com",
+    "phone": "+62-814-567-8901",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-004",
+    "name": "Diana Putri",
+    "email": "diana.putri@hotmail.com",
+    "phone": "+62-815-678-9012",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-005",
+    "name": "Eko Prasetyo",
+    "email": "eko.prasetyo@mail.com",
+    "phone": "+62-816-789-0123",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-006",
+    "name": "Fitri Handayani",
+    "email": "fitri.handayani@gmail.com",
+    "phone": "+62-817-890-1234",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-007",
+    "name": "Gunawan Wibowo",
+    "email": "gunawan.wibowo@yahoo.com",
+    "phone": "+62-818-901-2345",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-008",
+    "name": "Hendra Kusuma",
+    "email": "hendra.kusuma@outlook.com",
+    "phone": "+62-819-012-3456",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-009",
+    "name": "Indah Permata",
+    "email": "indah.permata@hotmail.com",
+    "phone": "+62-821-123-4567",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-010",
+    "name": "Joko Widodo",
+    "email": "joko.widodo@mail.com",
+    "phone": "+62-822-234-5678",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-011",
+    "name": "Kartika Sari",
+    "email": "kartika.sari@gmail.com",
+    "phone": "+62-823-345-6789",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-012",
+    "name": "Lestari Nur",
+    "email": "lestari.nur@yahoo.com",
+    "phone": "+62-824-456-7890",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-013",
+    "name": "Muhammad Rizki",
+    "email": "muhammad.rizki@outlook.com",
+    "phone": "+62-825-567-8901",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-014",
+    "name": "Nina Ayu",
+    "email": "nina.ayu@hotmail.com",
+    "phone": "+62-826-678-9012",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-015",
+    "name": "Oka Mahendra",
+    "email": "oka.mahendra@mail.com",
+    "phone": "+62-827-789-0123",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-016",
+    "name": "Putri Andini",
+    "email": "putri.andini@gmail.com",
+    "phone": "+62-828-890-1234",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-017",
+    "name": "Qonita Rahma",
+    "email": "qonita.rahma@yahoo.com",
+    "phone": "+62-829-901-2345",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-018",
+    "name": "Rizky Maulana",
+    "email": "rizky.maulana@outlook.com",
+    "phone": "+62-831-012-3456",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-019",
+    "name": "Siti Halima",
+    "email": "siti.halima@hotmail.com",
+    "phone": "+62-832-123-4567",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-020",
+    "name": "Teguh Wibowo",
+    "email": "teguh.wibowo@mail.com",
+    "phone": "+62-833-234-5678",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-021",
+    "name": "Umi Kalsum",
+    "email": "umi.kalsum@gmail.com",
+    "phone": "+62-834-345-6789",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-022",
+    "name": "Vira Anggraini",
+    "email": "vira.anggraini@yahoo.com",
+    "phone": "+62-835-456-7890",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-023",
+    "name": "Wawan Sutanto",
+    "email": "wawan.sutanto@outlook.com",
+    "phone": "+62-836-567-8901",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-024",
+    "name": "Yuni Astuti",
+    "email": "yuni.astuti@hotmail.com",
+    "phone": "+62-837-678-9012",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-025",
+    "name": "Zaki Firdaus",
+    "email": "zaki.firdaus@mail.com",
+    "phone": "+62-838-789-0123",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-026",
+    "name": "Dewi Sartika",
+    "email": "dewi.sartika@gmail.com",
+    "phone": "+62-839-890-1234",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-027",
+    "name": "Bambang Pamungkas",
+    "email": "bambang.pamungkas@yahoo.com",
+    "phone": "+62-841-901-2345",
+    "loyalty": "Bronze"
+  },
+  {
+    "id": "CUST-028",
+    "name": "Cindy Laudya",
+    "email": "cindy.laudya@outlook.com",
+    "phone": "+62-842-012-3456",
+    "loyalty": "Gold"
+  },
+  {
+    "id": "CUST-029",
+    "name": "Andhika Pratama",
+    "email": "andhika.pratama@hotmail.com",
+    "phone": "+62-843-123-4567",
+    "loyalty": "Silver"
+  },
+  {
+    "id": "CUST-030",
+    "name": "Rania Putri",
+    "email": "rania.putri@mail.com",
+    "phone": "+62-844-234-5678",
+    "loyalty": "Bronze"
+  }
+]

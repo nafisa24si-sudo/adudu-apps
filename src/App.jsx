@@ -8,6 +8,9 @@ function App() {
   const Dashboard = React.lazy(() => import("./pages/Dashboard"));
   const Orders = React.lazy(() => import("./pages/Orders"));
   const Customers = React.lazy(() => import("./pages/Customers"));
+  const Products = React.lazy(() => import("./pages/Product"));
+  const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
+  const CustomerDetail = React.lazy(() => import("./pages/CustomerDetail"));
   const NotFound = React.lazy(() => import("./pages/NotFound"));
   const BadRequest = React.lazy(() => import("./pages/BadRequest"));
   const Unauthorized = React.lazy(() => import("./pages/Unauthorized"));
@@ -24,6 +27,9 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/customers/:id" element={<CustomerDetail />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="400" element={<BadRequest />} />
           <Route path="401" element={<Unauthorized />} />
           <Route path="403" element={<Forbidden />} />

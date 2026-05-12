@@ -18,7 +18,7 @@ export default function Header() {
             {/* Icon & Profile Section */}
             <div className="flex items-center space-x-4">
                 {/* Notification Icon */}
-                <div className="group relative p-3 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl text-blue-600 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                <div className="group relative p-3 bg-linear-to-br from-blue-100 to-blue-200 rounded-2xl text-blue-600 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg">
                     <FaBell />
                     <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full px-2 py-1 text-xs text-white animate-pulse">
                         50
@@ -26,12 +26,12 @@ export default function Header() {
                 </div>
 
                 {/* Chart Icon */}
-                <div className="p-3 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg">
+                <div className="p-3 bg-linear-to-br from-green-100 to-green-200 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg">
                     <FcAreaChart className="text-xl" />
                 </div>
 
                 {/* Settings Icon */}
-                <div className="p-3 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl text-red-500 cursor-pointer transition-all duration-300 hover:scale-110 hover:-rotate-12 hover:shadow-lg">
+                <div className="p-3 bg-linear-to-br from-red-100 to-red-200 rounded-2xl text-red-500 cursor-pointer transition-all duration-300 hover:scale-110 hover:-rotate-12 hover:shadow-lg">
                     <SlSettings />
                 </div>
 
